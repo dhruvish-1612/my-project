@@ -1,0 +1,58 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+<!-- body -->
+
+<body>
+
+
+   <!--  contact -->
+   <div class="contact">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage">
+                  <h2>Enter OTP</h2>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-10 offset-md-1">
+               {% if msg %}
+                  <center>
+                     <font size="7"><b style="color: white;">{{msg}}</b>
+                  </center>
+                  </font>
+               {% endif %}
+               <form id="request" class="main_form" action="{% url 'verify_otp' %}" method="post">
+                  {% csrf_token %}
+                  <div class="row">
+                     <input type="hidden" name="otp" value="{{otp}}">
+                     <input type="hidden" name="email" value="{{email}}">
+                     <div class="col-md-12 ">
+                        <input class="contactus" placeholder="Enter OTP" type="text" name="uotp">
+                     </div>
+                     
+                     <div class="col-md-12">
+                        <button class="send_btn">Verify otp</button>
+                     </div>
+                     
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end contact -->
+
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<head>
+    <title>Callback</title>
+</head>
+<body>
+    <h2 style="color: #0e1b1f;"><b>Callback Messsage: </b></h2>                    
+    <h style="color: #00B9F1;"> Checksum Verification: {{ message }} </h3>         <br>
+    <h style="color: #00B9F1;">MID: {{ MID }}</h>                                  <br>
+    <h style="color: #00B9F1;">TXNID: {{ TXNID }}</h>                              <br>
+    <h style="color: #00B9F1;">ORDERID: {{ ORDERID }}</h>                          <br>
+    <h style="color: #00B9F1;">BANKTXNID: {{ BANKTXNID }}</h>                      <br>
+    <h style="color: #00B9F1;">TXNAMOUNT: {{ TXNAMOUNT }}</h>                      <br>
+    <h style="color: #00B9F1;">CURRENCY: {{ CURRENCY }}</h>                        <br><br>
+    <h3 style="color: #0e1b1f;"><b> STATUS: {{ STATUS }} </b></h3>                    
+    <h style="color: #00B9F1;">RESPCODE: {{ RESPCODE }}</h>                        <br>
+    <h style="color: #00B9F1;">RESPMSG: {{ RESPMSG }}</h>                          <br><br>
+    <h4 style="color: #0e1b1f;"><b>TXNDATE: {{ TXNDATE }}</b></h4>                    
+    <h style="color: #00B9F1;">GATEWAYNAME: {{ GATEWAYNAME }}</h>                  <br>
+    <h style="color: #00B9F1;">BANKNAME: {{ BANKNAME }}</h>                        <br>
+    <h style="color: #00B9F1;">BIN_NAME: {{ BIN_NAME }}</h>                        <br>
+    <h style="color: #00B9F1;">PAYMENTMODE: {{ PAYMENTMODE }}</h>                  <br>
+    <h style="color: #00B9F1;">CHECKSUMHASH: {{ CHECKSUMHASH }}</h>                <br><br><br><br>
+
+    <h2><a href="{% url 'index' %}"> BACK TO HOME</a></h2>
+</body>
+</html>
+
+{% endblock %}
